@@ -1,0 +1,33 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app >
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+    <servlet-name>QuickServlet</servlet-name>
+    <servlet-class>QuickServlet</servlet-class>
+  </servlet>
+  <!-- All servlets must be declared under one another -->
+  <servlet>
+    <servlet-name>ModServlet</servlet-name>
+    <servlet-class>ModServlet</servlet-class>
+  </servlet>
+
+  <!-- Same logic applies to the servlets-mapping -->
+  <servlet-mapping>
+    <servlet-name>QuickServlet</servlet-name>
+    <url-pattern>/quickservlet</url-pattern>
+  </servlet-mapping>
+ <!-- Need to map another url in order to have an action like POST to be able to redirect -->
+  <servlet-mapping>
+    <servlet-name>QuickServlet</servlet-name>
+    <url-pattern>/insert</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>ModServlet</servlet-name>
+    <url-pattern>/modify</url-pattern>
+  </servlet-mapping>
+
+</web-app>
